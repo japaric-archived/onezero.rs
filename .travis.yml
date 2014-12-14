@@ -2,16 +2,16 @@ language: rust
 
 env:
   global:
-    - secure: LQ012kGKJEtlncTG46NdjRTb5779/Fyvmum2nAOsq+A9GFq+o84gS4idvVxmvUDLNmit1jLW37MEtH0LxUvpnIPkEIDAyRsrsYQZjDovN83RUQHrrEcXl5WNm/RdHHUVVziZYIivMuQRLPrEhMbrnUc+8v8XJaYCii/GAxuIOKo=
+    - secure: BE+ADwEi92STkK/cjPxDvs2orMkuP5152uaDRST4ZD3Y73n4KTlyq0HXu1YwGLPufo8a4xj6lRoOtLbEL1DSjbQEVN7dlxQiFq1rjZM4nPlNvvTSUJHz9awT52oILPoTirsZfYpqpW9lQ6gHSpa/Eagrmk7haMo1J7O3vcehvjM=
 
 script:
   - cargo build --verbose
   - cargo test --verbose
-  - cargo doc --verbose && mv target/doc doc
+  - cargo doc --verbose
   - ./check-line-length.sh
 
 after_success:
-  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && curl http://www.rust-ci.org/artifacts/put?t=$RUSTCI_TOKEN | sh'
+  - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && bash upload-docs.sh'
 
 branches:
   only: master
