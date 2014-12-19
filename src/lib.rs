@@ -22,7 +22,7 @@ macro_rules! float {
     }
 }
 
-float!(f32, f64)
+float!(f32, f64);
 
 macro_rules! int {
     ($($ty:ty),+) => {$(
@@ -31,4 +31,4 @@ macro_rules! int {
     }
 }
 
-int!(i8, i16, i32, i64, int, u8, u16, u32, u64)
+int!(i8, i16, i32, i64, int, u8, u16, u32, u64);
