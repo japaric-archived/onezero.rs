@@ -1,7 +1,7 @@
 //! Additive and multiplicative identities
 
+#![allow(unstable)]
 #![deny(missing_docs, warnings)]
-#![feature(macro_rules)]
 
 /// Multiplicative identity
 pub trait One {
@@ -31,4 +31,4 @@ macro_rules! int {
     }
 }
 
-int!(i8, i16, i32, i64, int, u8, u16, u32, u64);
+int!(i8, i16, i32, i64, isize, u8, u16, u32, u64, usize);
