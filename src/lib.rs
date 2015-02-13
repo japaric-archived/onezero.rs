@@ -1,7 +1,7 @@
 //! Additive and multiplicative identities
 
-#![allow(unstable)]
-#![deny(missing_docs, warnings)]
+#![deny(missing_docs)]
+#![deny(warnings)]
 
 /// Multiplicative identity
 pub trait One {
